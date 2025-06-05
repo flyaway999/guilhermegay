@@ -1,28 +1,32 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh; /* ocupa a altura toda da tela */
+  height: 100vh;
   display: flex;
-  justify-content: center; /* centraliza na horizontal */
-  align-items: center;     /* centraliza na vertical */
-  background: #f0f0f0; /* só para ver o contraste, pode tirar */
+  justify-content: center;
+  align-items: center;
+
+  /* imagem de fundo */
+  background-image: url('https://github.com/user-attachments/assets/d7bbc812-a156-466e-8907-f43ba34a7cbc');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%; /* estica a imagem completamente */
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.2); /* fundo transparente */
-  padding: 30px;
-  border-radius: 23px;
+  background: rgba(0, 0, 0, 0.3); /* fundo semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
 }
 
 label, textarea {
   display: block;
   margin-bottom: 10px;
-    font-family: Arial, sans-serif;
 }
 
 textarea {
   width: 250px;
   height: 100px;
-  resize: none; /* impede de redimensionar, opcional */
+  resize: none;
+    background: rgba(150, 16, 16, 0)
 }
-

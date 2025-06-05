@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOCORRO!</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOCORRO!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://github.com/user-attachments/assets/d7bbc812-a156-466e-8907-f43ba34a7cbc');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      font-family: monospace; /* estilo clássico de jogo antigo */
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.336);
+      padding: 20px;
+      border-radius: 10px;
+      color: #5e1a09;
+      font-size: 18px;
+      max-width: 600px;
+      min-height: 150px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <label>Mensagem:</label>
-    <textarea></textarea>
-</div>
+<div class="container" id="message"></div>
+
+<script>
+  const message = `ATENÇÃO!\nEsta entidade foi vista pela última vez encarando profundamente a câmera...\nEle é extremamente perigoso e pode te hipnotizar apenas com o olhar.\nNÃO tente contato.\nSe avistá-lo, corra imediatamente e envie ajuda!`;
+
+
+  const container = document.getElementById('message');
+  let index = 0;
+
+  function typeWriter() {
+    if (index < message.length) {
+      container.textContent += message.charAt(index);
+      index++;
+      setTimeout(typeWriter, 40);
+    }
+  }
+
+  typeWriter();
+</script>
 
 </body>
 </html>
