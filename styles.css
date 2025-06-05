@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* ocupa a altura toda da tela */
+  display: flex;
+  justify-content: center; /* centraliza na horizontal */
+  align-items: center;     /* centraliza na vertical */
+  background: #f0f0f0; /* só para ver o contraste, pode tirar */
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.2); /* fundo transparente */
+  padding: 30px;
+  border-radius: 23px;
+}
+
+label, textarea {
+  display: block;
+  margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+  width: 250px;
+  height: 100px;
+  resize: none; /* impede de redimensionar, opcional */
+}
+
