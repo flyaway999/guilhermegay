@@ -12,11 +12,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column; /* adiciona coluna para o botão ficar embaixo */
       background-image: url('https://github.com/user-attachments/assets/d7bbc812-a156-466e-8907-f43ba34a7cbc');
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100% 100%;
-      font-family: monospace; /* estilo clássico de jogo antigo */
+      font-family: monospace;
     }
 
     .container {
@@ -29,17 +30,37 @@
       min-height: 150px;
       white-space: pre-wrap;
     }
+
+    button {
+      margin-top: 20px;
+      background: transparent;
+      color: #ff0000;
+      border: 1px solid #ff0000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: monospace;
+      display: none; /* começa escondido */
+    }
+
+    button:hover {
+      background: #110000;
+      color: black;
+    }
   </style>
 </head>
 <body>
 
 <div class="container" id="message"></div>
 
+<button id="nextBtn">Prosseguir</button>
+
 <script>
   const message = `ATENÇÃO!\nEsta entidade foi vista pela última vez encarando profundamente a câmera...\nEle é extremamente perigoso e pode te hipnotizar apenas com o olhar.\nNÃO tente contato.\nSe avistá-lo, corra imediatamente e envie ajuda!`;
 
-
   const container = document.getElementById('message');
+  const nextBtn = document.getElementById('nextBtn');
   let index = 0;
 
   function typeWriter() {
@@ -47,10 +68,17 @@
       container.textContent += message.charAt(index);
       index++;
       setTimeout(typeWriter, 40);
+    } else {
+      nextBtn.style.display = 'inline-block'; // mostra o botão após terminar
     }
   }
 
   typeWriter();
+
+  nextBtn.addEventListener('click', () => {
+    alert('Você decidiu prosseguir... Boa sorte!');
+    // Ou redirecionamento: window.location.href = 'pagina2.html';
+  });
 </script>
 
 </body>
